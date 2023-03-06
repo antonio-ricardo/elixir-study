@@ -13,4 +13,10 @@ defmodule InmanaWeb.SuppliesView do
       supply: supply
     }
   end
+
+  def render("showByExpiration.json", %{supplies: supplies}) do
+    %{
+      suppliesToExpirate: supplies
+    }
+  end
 end

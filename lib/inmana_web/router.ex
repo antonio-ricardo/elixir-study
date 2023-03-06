@@ -13,6 +13,7 @@ defmodule InmanaWeb.Router do
     post "/restaurants", RestaurantsController, :create
 
     resources "/supplies", SuppliesController, only: [:create, :show]
+    post "/supplies/get-by-expiration", SuppliesController, :get_by_expiration
   end
 
   # Enables LiveDashboard only for development

@@ -17,4 +17,10 @@ defmodule InmanaWeb.SuppliesController do
       con |> put_status(:ok) |> render("show.json", supply: supply)
     end
   end
+
+  def get_by_expiration(con, params) do
+    with {:ok, %{} = supplies} <- Inmana.get_by_expiration(params) do
+      con |> put_status(:ok) |> render("showByExpiration.json", supplies: supplies)
+    end
+  end
 end
